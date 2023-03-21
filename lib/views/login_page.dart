@@ -1,6 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:goethestudent/services/auth_service.dart';
 import 'package:goethestudent/utils/colors.dart';
 import 'package:goethestudent/utils/custom_button.dart';
+import 'package:goethestudent/views/dashboard_page.dart';
 
 class LogInPage extends StatefulWidget {
   const LogInPage({Key? key}) : super(key: key);
@@ -10,6 +14,8 @@ class LogInPage extends StatefulWidget {
 }
 
 class _LogInPageState extends State<LogInPage> {
+  User? user;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +33,12 @@ class _LogInPageState extends State<LogInPage> {
               CustomButton(
                 color: AppColors.whiteColor,
                 textColor: AppColors.blackColor,
-                onPressed: () {},
+                onPressed: () async {
+                  user = await Authentication.signInWithGoogle();
+                  if (user != null) {
+                    Get.off(() => const DashBoardPage());
+                  }
+                },
                 text: 'Sign In with google',
               ),
             ],
