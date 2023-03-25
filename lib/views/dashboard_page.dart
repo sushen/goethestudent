@@ -66,7 +66,7 @@ class DashBoardPage extends StatelessWidget {
                                     Padding(
                                       padding: const EdgeInsets.only(top: 4.0),
                                       child: Text(
-                                        "Hotels".toUpperCase(),
+                                        "Teachers".toUpperCase(),
                                         style: GoogleFonts.cinzel(
                                             color: Colors.white,
                                             fontSize: 14,
@@ -89,7 +89,7 @@ class DashBoardPage extends StatelessWidget {
                                     Padding(
                                       padding: const EdgeInsets.only(top: 4.0),
                                       child: Text(
-                                        "Flights".toUpperCase(),
+                                        "Students".toUpperCase(),
                                         style: GoogleFonts.cinzel(
                                             color: Colors.white,
                                             fontSize: 14,
@@ -112,7 +112,7 @@ class DashBoardPage extends StatelessWidget {
                                     Padding(
                                       padding: const EdgeInsets.only(top: 1.0),
                                       child: Text(
-                                        "Trains".toUpperCase(),
+                                        "Officials".toUpperCase(),
                                         style: GoogleFonts.cinzel(
                                             color: Colors.white,
                                             fontSize: 14,
@@ -130,7 +130,7 @@ class DashBoardPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 40, top: 22.0),
                         child: Text(
-                          'Plan A Trip',
+                          'Plan A Study',
                           style: GoogleFonts.cinzel(
                               color: Colors.white,
                               fontSize: 20,
@@ -147,7 +147,7 @@ class DashBoardPage extends StatelessWidget {
                         padding: const EdgeInsets.only(
                             left: 40, top: 2.0, bottom: 5),
                         child: Text(
-                          'Where Do You Want To Stay?',
+                          'Where Do You Want To Start?',
                           style: GoogleFonts.lato(
                               color: Colors.white,
                               letterSpacing: 0,
@@ -212,7 +212,7 @@ class DashBoardPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 28.0),
                     child: Text(
-                      '3 Hotels Found',
+                      '3 Teacher Found',
                       style: GoogleFonts.lato(
                           color: Colors.grey[600],
                           letterSpacing: 0,
@@ -295,7 +295,7 @@ class DashBoardPage extends StatelessWidget {
                   title: Row(
                     children: [
                       Text(
-                        'The Luxury Hotel',
+                        'Nilufar Yesmin',
                         style: GoogleFonts.cinzel(
                             color: Colors.black,
                             letterSpacing: 0,
@@ -370,7 +370,7 @@ class DashBoardPage extends StatelessWidget {
                 title: Row(
                   children: [
                     Text(
-                      'The Rose Hotel',
+                      'Subrina Sohana',
                       style: GoogleFonts.cinzel(
                           color: Colors.black,
                           letterSpacing: 0,
@@ -444,7 +444,7 @@ class DashBoardPage extends StatelessWidget {
                 title: Row(
                   children: [
                     Text(
-                      'The Blue Hotel',
+                      'Mr Chang Mao',
                       style: GoogleFonts.cinzel(
                           color: Colors.black,
                           letterSpacing: 0,
@@ -483,7 +483,7 @@ class DashBoardPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 15.0),
                     child: Text(
-                      '12 Locations',
+                      '3 Subject',
                       style: GoogleFonts.lato(
                           color: Colors.grey[600],
                           letterSpacing: 0,
@@ -551,7 +551,7 @@ class DashBoardPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 28.0),
                         child: Text(
-                          'India',
+                          'A1 Exam',
                           style: GoogleFonts.cinzel(
                               color: Colors.grey[600],
                               fontSize: 15,
@@ -598,7 +598,7 @@ class DashBoardPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 28.0),
                         child: Text(
-                          'Singapore',
+                          'Ausbilding',
                           style: GoogleFonts.cinzel(
                               color: Colors.grey[600],
                               fontSize: 15,
@@ -645,7 +645,7 @@ class DashBoardPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 28.0),
                         child: Text(
-                          'New Zealand',
+                          'Exam Preparation',
                           style: GoogleFonts.cinzel(
                               color: Colors.grey[600],
                               fontSize: 15,
