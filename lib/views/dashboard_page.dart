@@ -48,10 +48,11 @@ class DashBoardPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  Container(
                       height: 50,
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 8, left: 0.0),
@@ -98,29 +99,29 @@ class DashBoardPage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 8, left: 10.0),
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                child: Row(
-                                  children: [
-                                    const Icon(Icons.train, size: 18),
-                                    const SizedBox(width: 5),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 1.0),
-                                      child: Text(
-                                        "Officials".toUpperCase(),
-                                        style: GoogleFonts.cinzel(
-                                            color: Colors.white,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.normal),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            // Padding(
+                            //   padding:
+                            //       const EdgeInsets.only(top: 8, left: 10.0),
+                            //   child: ElevatedButton(
+                            //     onPressed: () {},
+                            //     child: Row(
+                            //       children: [
+                            //         const Icon(Icons.train, size: 18),
+                            //         const SizedBox(width: 5),
+                            //         Padding(
+                            //           padding: const EdgeInsets.only(top: 1.0),
+                            //           child: Text(
+                            //             "Officials".toUpperCase(),
+                            //             style: GoogleFonts.cinzel(
+                            //                 color: Colors.white,
+                            //                 fontSize: 14,
+                            //                 fontWeight: FontWeight.normal),
+                            //           ),
+                            //         ),
+                            //       ],
+                            //     ),
+                            //   ),
+                            // ),
                           ])),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -156,34 +157,34 @@ class DashBoardPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 40.0, right: 40, top: 20),
-                    child: TextField(
-                      textAlign: TextAlign.center,
-                      minLines: 1,
-                      maxLines: 1,
-                      autocorrect: false,
-                      decoration: InputDecoration(
-                        prefixIcon: const Icon(Icons.location_on),
-                        hintText: 'Search Your Destination',
-                        hintStyle: GoogleFonts.lato(
-                            color: Colors.grey[600],
-                            fontSize: 15,
-                            fontWeight: FontWeight.normal),
-                        filled: true,
-                        fillColor: Colors.grey[200],
-                        enabledBorder: const OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                          borderSide: BorderSide(color: Colors.transparent),
-                        ),
-                        focusedBorder: const OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                          borderSide: BorderSide(color: Colors.transparent),
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Padding(
+                  //   padding:
+                  //       const EdgeInsets.only(left: 40.0, right: 40, top: 20),
+                  //   child: TextField(
+                  //     textAlign: TextAlign.center,
+                  //     minLines: 1,
+                  //     maxLines: 1,
+                  //     autocorrect: false,
+                  //     decoration: InputDecoration(
+                  //       prefixIcon: const Icon(Icons.location_on),
+                  //       hintText: 'Search Your Destination',
+                  //       hintStyle: GoogleFonts.lato(
+                  //           color: Colors.grey[600],
+                  //           fontSize: 15,
+                  //           fontWeight: FontWeight.normal),
+                  //       filled: true,
+                  //       fillColor: Colors.grey[200],
+                  //       enabledBorder: const OutlineInputBorder(
+                  //         borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  //         borderSide: BorderSide(color: Colors.transparent),
+                  //       ),
+                  //       focusedBorder: const OutlineInputBorder(
+                  //         borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  //         borderSide: BorderSide(color: Colors.transparent),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               )),
           Row(
@@ -280,7 +281,7 @@ class DashBoardPage extends StatelessWidget {
                       ],
                       image: const DecorationImage(
                         image: NetworkImage(
-                          'https://media.nomadicmatt.com/hotelreview1a.jpg',
+                          'https://i.pinimg.com/564x/61/df/13/61df13452dab063e11d79abab00b083f.jpg',
                         ),
                         fit: BoxFit.fill,
                       ),
@@ -356,7 +357,7 @@ class DashBoardPage extends StatelessWidget {
                     ],
                     image: const DecorationImage(
                       image: NetworkImage(
-                          'https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg?width=2119&height=1195&fit=crop&format=pjpg&auto=webp'),
+                          'https://i.pinimg.com/564x/d1/fb/00/d1fb00cb580f5dce393b8a95535235eb.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -430,7 +431,7 @@ class DashBoardPage extends StatelessWidget {
                     ],
                     image: const DecorationImage(
                       image: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkYShyjCffkVCgE6YP0KzkRKbzIAzgKnpJig&usqp=CAU'),
+                          'https://i.pinimg.com/564x/b3/28/19/b32819061f84d2d3cb44c93da54eff26.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -536,7 +537,7 @@ class DashBoardPage extends StatelessWidget {
                             ],
                             image: const DecorationImage(
                               image: NetworkImage(
-                                  'https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fblogs-images.forbes.com%2Falexcapri%2Ffiles%2F2018%2F09%2FSingapore-1200x800.jpg'),
+                                  'https://i.pinimg.com/564x/53/81/93/538193c83d2912c4f06f6ae07f8f4549.jpg'),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -583,7 +584,7 @@ class DashBoardPage extends StatelessWidget {
                             ],
                             image: const DecorationImage(
                               image: NetworkImage(
-                                  'https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fblogs-images.forbes.com%2Falexcapri%2Ffiles%2F2018%2F09%2FSingapore-1200x800.jpg'),
+                                  'https://i.pinimg.com/564x/73/5e/a0/735ea0a91c3933bffbcda700c510915e.jpg'),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -630,7 +631,7 @@ class DashBoardPage extends StatelessWidget {
                             ],
                             image: const DecorationImage(
                               image: NetworkImage(
-                                  'https://www.newzealand.com/assets/Tourism-NZ/Christchurch-Canterbury/8bb86abcfd/img-1536307813-4242-957-p-C4D67668-0642-F5C5-BC3A684C8BB1F331-2544003__aWxvdmVrZWxseQo_FocalPointCropWzI0MCw0ODAsNTAsNTMsNzUsImpwZyIsNjUsMi41XQ.jpg'),
+                                  'https://i.pinimg.com/564x/53/a9/05/53a9056f01bb1baeb168a3a0627337ea.jpg'),
                               fit: BoxFit.fill,
                             ),
                           ),
