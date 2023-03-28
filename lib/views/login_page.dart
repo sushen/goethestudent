@@ -24,7 +24,9 @@ class _LogInPageState extends State<LogInPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // TODO : add facebook sign-in
               CustomButton(
+                // TODO : complete phone sign-in
                 color: AppColors.redColor,
                 textColor: AppColors.whiteColor,
                 onPressed: () {},
