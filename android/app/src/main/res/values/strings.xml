@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GStudent</string>
+    <string name="facebook_app_id">236089868798155</string>
+    <string name="fb_login_protocol_scheme">fb236089868798155</string>
+    <string name="facebook_client_token">6978b2ef9f473389b7c4f60aad06c1db</string>
+</resources>

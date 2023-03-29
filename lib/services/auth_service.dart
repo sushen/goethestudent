@@ -1,10 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class Authentication {
-  static Future<User?> signInWithGoogle() async {
-    FirebaseAuth auth = FirebaseAuth.instance;
+  final FirebaseAuth auth;
+
+  Authentication(this.auth);
+
+  Future<User?> signInWithGoogle() async {
     User? user;
 
     final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -52,6 +56,24 @@ class Authentication {
       }
     }
 
+    return user;
+  }
+
+  Future<User?> signInWithFacebook() async {
+    User? user;
+    try {
+      final LoginResult loginResult = await FacebookAuth.instance.login();
+      final OAuthCredential facebookCredential =
+          FacebookAuthProvider.credential(loginResult.accessToken!.token);
+      final UserCredential userCredential =
+          await auth.signInWithCredential(facebookCredential);
+      user = userCredential.user;
+    } catch (e) {
+      Get.showSnackbar(const GetSnackBar(
+        message: "Unknown Error. Try again later",
+        duration: Duration(seconds: 3),
+      ));
+    }
     return user;
   }
 }

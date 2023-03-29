@@ -36,12 +36,26 @@ class _LogInPageState extends State<LogInPage> {
                 color: AppColors.whiteColor,
                 textColor: AppColors.blackColor,
                 onPressed: () async {
-                  user = await Authentication.signInWithGoogle();
+                  user = await Authentication(FirebaseAuth.instance)
+                      .signInWithGoogle();
                   if (user != null) {
                     Get.off(() => const DashBoardPage());
                   }
                 },
                 text: 'Sign In with google',
+              ),
+
+              CustomButton(
+                color: AppColors.blueColor,
+                textColor: AppColors.whiteColor,
+                onPressed: () async {
+                  user = await Authentication(FirebaseAuth.instance)
+                      .signInWithFacebook();
+                  if (user != null) {
+                    Get.off(() => const DashBoardPage());
+                  }
+                },
+                text: 'Sign In with Facebook',
               ),
             ],
           ),
