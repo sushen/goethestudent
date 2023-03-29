@@ -68,10 +68,10 @@ class Authentication {
       final UserCredential userCredential =
           await auth.signInWithCredential(facebookCredential);
       user = userCredential.user;
-    } catch (e) {
-      Get.showSnackbar(const GetSnackBar(
-        message: "Unknown Error. Try again later",
-        duration: Duration(seconds: 3),
+    } on FirebaseAuthException catch (e) {
+      Get.showSnackbar(GetSnackBar(
+        message: e.message,
+        duration: const Duration(seconds: 3),
       ));
     }
     return user;
