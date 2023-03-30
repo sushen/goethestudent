@@ -25,25 +25,25 @@ class _LogInPageState extends State<LogInPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // TODO : add facebook sign-in
-              CustomButton(
-                // TODO : complete phone sign-in
-                color: AppColors.redColor,
-                textColor: AppColors.whiteColor,
-                onPressed: () {},
-                text: 'Sign In with phone',
-              ),
-              CustomButton(
-                color: AppColors.whiteColor,
-                textColor: AppColors.blackColor,
-                onPressed: () async {
-                  user = await Authentication(FirebaseAuth.instance)
-                      .signInWithGoogle();
-                  if (user != null) {
-                    Get.off(() => const DashBoardPage());
-                  }
-                },
-                text: 'Sign In with google',
-              ),
+              // CustomButton(
+              //   // TODO : complete phone sign-in
+              //   color: AppColors.redColor,
+              //   textColor: AppColors.whiteColor,
+              //   onPressed: () {},
+              //   text: 'Sign In with phone',
+              // ),
+              // CustomButton(
+              //   color: AppColors.whiteColor,
+              //   textColor: AppColors.blackColor,
+              //   onPressed: () async {
+              //     user = await Authentication(FirebaseAuth.instance)
+              //         .signInWithGoogle();
+              //     if (user != null) {
+              //       Get.off(() => const DashBoardPage());
+              //     }
+              //   },
+              //   text: 'Sign In with google',
+              // ),
 
               CustomButton(
                 color: AppColors.blueColor,
@@ -55,7 +55,7 @@ class _LogInPageState extends State<LogInPage> {
                     Get.off(() => const DashBoardPage());
                   }
                 },
-                text: 'Sign In with Facebook',
+                text: 'Facebook',
               ),
             ],
           ),
