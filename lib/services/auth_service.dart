@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -59,21 +58,21 @@ class Authentication {
     return user;
   }
 
-  Future<User?> signInWithFacebook() async {
-    User? user;
-    try {
-      final LoginResult loginResult = await FacebookAuth.instance.login();
-      final OAuthCredential facebookCredential =
-          FacebookAuthProvider.credential(loginResult.accessToken!.token);
-      final UserCredential userCredential =
-          await auth.signInWithCredential(facebookCredential);
-      user = userCredential.user;
-    } on FirebaseAuthException catch (e) {
-      Get.showSnackbar(GetSnackBar(
-        message: e.message,
-        duration: const Duration(seconds: 3),
-      ));
-    }
-    return user;
-  }
+  // Future<User?> signInWithFacebook() async {
+  //   User? user;
+  //   try {
+  //     final LoginResult loginResult = await FacebookAuth.instance.login();
+  //     final OAuthCredential facebookCredential =
+  //         FacebookAuthProvider.credential(loginResult.accessToken!.token);
+  //     final UserCredential userCredential =
+  //         await auth.signInWithCredential(facebookCredential);
+  //     user = userCredential.user;
+  //   } on FirebaseAuthException catch (e) {
+  //     Get.showSnackbar(GetSnackBar(
+  //       message: e.message,
+  //       duration: const Duration(seconds: 3),
+  //     ));
+  //   }
+  //   return user;
+  // }
 }

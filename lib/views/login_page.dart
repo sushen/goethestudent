@@ -32,31 +32,31 @@ class _LogInPageState extends State<LogInPage> {
               //   onPressed: () {},
               //   text: 'Sign In with phone',
               // ),
-              // CustomButton(
-              //   color: AppColors.whiteColor,
-              //   textColor: AppColors.blackColor,
-              //   onPressed: () async {
-              //     user = await Authentication(FirebaseAuth.instance)
-              //         .signInWithGoogle();
-              //     if (user != null) {
-              //       Get.off(() => const DashBoardPage());
-              //     }
-              //   },
-              //   text: 'Sign In with google',
-              // ),
-
               CustomButton(
-                color: AppColors.blueColor,
-                textColor: AppColors.whiteColor,
+                color: AppColors.whiteColor,
+                textColor: AppColors.blackColor,
                 onPressed: () async {
                   user = await Authentication(FirebaseAuth.instance)
-                      .signInWithFacebook();
+                      .signInWithGoogle();
                   if (user != null) {
                     Get.off(() => const DashBoardPage());
                   }
                 },
-                text: 'Facebook',
+                text: 'Google',
               ),
+
+              // CustomButton(
+              //   color: AppColors.blueColor,
+              //   textColor: AppColors.whiteColor,
+              //   onPressed: () async {
+              //     user = await Authentication(FirebaseAuth.instance)
+              //         .signInWithFacebook();
+              //     if (user != null) {
+              //       Get.off(() => const DashBoardPage());
+              //     }
+              //   },
+              //   text: 'Facebook',
+              // ),
             ],
           ),
         ),
