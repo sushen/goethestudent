@@ -1,4 +1,4 @@
-# goethestudent
+# Goethe Student
 
 Project goethe student
 
