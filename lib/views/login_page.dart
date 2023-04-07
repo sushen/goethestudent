@@ -25,24 +25,38 @@ class _LogInPageState extends State<LogInPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // TODO : add facebook sign-in
-              CustomButton(
-                // TODO : complete phone sign-in
-                color: AppColors.redColor,
-                textColor: AppColors.whiteColor,
-                onPressed: () {},
-                text: 'Sign In with phone',
-              ),
+              // CustomButton(
+              //   // TODO : complete phone sign-in
+              //   color: AppColors.redColor,
+              //   textColor: AppColors.whiteColor,
+              //   onPressed: () {},
+              //   text: 'Sign In with phone',
+              // ),
               CustomButton(
                 color: AppColors.whiteColor,
                 textColor: AppColors.blackColor,
                 onPressed: () async {
-                  user = await Authentication.signInWithGoogle();
+                  user = await Authentication(FirebaseAuth.instance)
+                      .signInWithGoogle();
                   if (user != null) {
                     Get.off(() => const DashBoardPage());
                   }
                 },
-                text: 'Sign In with google',
+                text: 'Google',
               ),
+
+              // CustomButton(
+              //   color: AppColors.blueColor,
+              //   textColor: AppColors.whiteColor,
+              //   onPressed: () async {
+              //     user = await Authentication(FirebaseAuth.instance)
+              //         .signInWithFacebook();
+              //     if (user != null) {
+              //       Get.off(() => const DashBoardPage());
+              //     }
+              //   },
+              //   text: 'Facebook',
+              // ),
             ],
           ),
         ),

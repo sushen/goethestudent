@@ -1,10 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="blog.biswas.video.goethestudent">
-   <application
-        android:label="G Student"
+
+
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+    <application
+        android:label="GStudent"
         android:name="${applicationName}"
-        android:icon="@mipmap/launcher_icon">
-        <activity
+        android:icon="@mipmap/ic_launcher">
+
+       <activity
+
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
