@@ -33,7 +33,7 @@ class _LogInPageState extends State<LogInPage> {
               //   text: 'Sign In with phone',
               // ),
               CustomButton(
-                color: AppColors.redColor,
+                color: AppColors.pinkColor,
                 textColor: AppColors.blackColor,
                 onPressed: () async {
                   user = await Authentication(FirebaseAuth.instance)
