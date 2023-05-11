@@ -6,6 +6,7 @@ import 'package:goethestudent/utils/colors.dart';
 import 'package:goethestudent/utils/custom_button.dart';
 import 'package:goethestudent/views/dashboard_page.dart';
 
+//this line for checked pull request
 class LogInPage extends StatefulWidget {
   const LogInPage({Key? key}) : super(key: key);
 
