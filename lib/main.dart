@@ -9,6 +9,7 @@ Future<void> main() async {
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
+
 //this line for checked pull request
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
