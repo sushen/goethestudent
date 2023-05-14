@@ -1,12 +1,39 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:goethestudent/views/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class DashBoardPage extends StatelessWidget {
   const DashBoardPage({super.key});
-
+  //this line for checked pull request
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("Dashboard"),
+            ElevatedButton(
+              onPressed: () async{
+                await GoogleSignIn().signOut();
+                FirebaseAuth.instance.signOut().then((value){
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return LogInPage();
+                  }));
+                });
+              },
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.deepOrangeAccent)
+              ),
+              child: Text("Sign Out"),
+            ),
+          ],
+        ),
+
+      ),
         body: SingleChildScrollView(
       child: Column(
         children: [
