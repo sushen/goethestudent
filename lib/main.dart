@@ -1,5 +1,4 @@
 import 'package:firebase_core/firebase_core.dart';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:goethestudent/views/login_page.dart';
@@ -10,6 +9,7 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 
+//this line for checked pull request
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
