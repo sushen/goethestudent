@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:goethestudent/utils/colors.dart';
+import 'package:goethestudent/views/booking_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DashBoardPage extends StatelessWidget {
@@ -99,6 +101,7 @@ class DashBoardPage extends StatelessWidget {
                                 ),
                               ),
                             ),
+
                             // Padding(
                             //   padding:
                             //       const EdgeInsets.only(top: 8, left: 10.0),
@@ -185,6 +188,9 @@ class DashBoardPage extends StatelessWidget {
                   //     ),
                   //   ),
                   // ),
+
+                  //book button to go booking page
+                  const BookButton()
                 ],
               )),
           Row(
@@ -655,5 +661,62 @@ class DashBoardPage extends StatelessWidget {
         ],
       ),
     ));
+  }
+}
+
+class BookButton extends StatelessWidget {
+  const BookButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.center,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: ElevatedButton(
+          style: ButtonStyle(
+              elevation: const MaterialStatePropertyAll(0),
+              maximumSize: const MaterialStatePropertyAll(Size(172, 55)),
+              backgroundColor: const MaterialStatePropertyAll(
+                AppColors.whiteColor,
+              ),
+              shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25)))),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (builder) => const BookingPage()));
+          },
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 4.0),
+                child: Text(
+                  "Book Classes",
+                  style: GoogleFonts.cinzel(
+                      color: AppColors.blueColor,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(width: 5),
+              Container(
+                height: 25,
+                width: 25,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(width: 1, color: AppColors.blueColor)),
+                child: const Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  size: 12,
+                  color: AppColors.blueColor,
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
