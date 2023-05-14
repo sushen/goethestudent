@@ -1,4 +1,4 @@
 1 #
 ./gradlew signingReport
-
+keytool -list -v -alias androiddebugkey -keystore "C:\Users\nirob\.android\debug.keystore"
 2 #

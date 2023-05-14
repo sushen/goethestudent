@@ -8,7 +8,7 @@ Future<void> main() async {
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
-
+//keytool -list -v -alias androiddebugkey -keystore "C:\Users\nirob\.android\debug.keystore"
 //this line for checked pull request
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
