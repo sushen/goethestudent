@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:goethestudent/services/local_service.dart';
 import 'package:goethestudent/utils/colors.dart';
 import 'package:goethestudent/views/booking_page.dart';
+import 'package:goethestudent/views/teacher_schedule_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DashBoardPage extends StatelessWidget {
@@ -8,6 +10,7 @@ class DashBoardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final teacherList = LocalService.getTeacher();
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(
@@ -239,231 +242,96 @@ class DashBoardPage extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 10),
-          InkWell(
-            onTap: () {},
-            child: Padding(
-              padding: const EdgeInsets.only(left: 15.0, right: 15, top: 15),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(5.0),
-                      bottomRight: Radius.circular(5.0),
-                      topLeft: Radius.circular(5.0),
-                      topRight: Radius.circular(5.0),
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey[200]!,
-                        blurRadius: 10.0, // soften the shadow
-                        spreadRadius: 2.0, //extend the shadow
-                        offset: const Offset(
-                          0, // Move to right 10  horizontally
-                          4, // Move to bottom 10 Vertically
-                        ),
-                      )
-                    ]),
-                child: ListTile(
-                  leading: Container(
-                    height: 50,
-                    width: 70,
+          Column(
+            children: List.generate(
+              teacherList.length,
+              (index) => InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (builder) => TeacherSchedulePage(
+                              teacher: teacherList[index])));
+                },
+                child: Padding(
+                  padding:
+                      const EdgeInsets.only(left: 15.0, right: 15, top: 15),
+                  child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                        bottomLeft: Radius.circular(5.0),
-                        bottomRight: Radius.circular(5.0),
-                        topLeft: Radius.circular(5.0),
-                        topRight: Radius.circular(5.0),
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey[300]!,
-                          blurRadius: 10.0, // soften the shadow
-                          spreadRadius: 2.0, //extend the shadow
-                          offset: const Offset(
-                            0, // Move to right 10  horizontally
-                            4, // Move to bottom 10 Vertically
+                        color: Colors.white,
+                        borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(5.0),
+                          bottomRight: Radius.circular(5.0),
+                          topLeft: Radius.circular(5.0),
+                          topRight: Radius.circular(5.0),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey[200]!,
+                            blurRadius: 10.0, // soften the shadow
+                            spreadRadius: 2.0, //extend the shadow
+                            offset: const Offset(
+                              0, // Move to right 10  horizontally
+                              4, // Move to bottom 10 Vertically
+                            ),
+                          )
+                        ]),
+                    child: ListTile(
+                      leading: Container(
+                        height: 50,
+                        width: 70,
+                        decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(5.0),
+                            bottomRight: Radius.circular(5.0),
+                            topLeft: Radius.circular(5.0),
+                            topRight: Radius.circular(5.0),
                           ),
-                        )
-                      ],
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                          'https://i.pinimg.com/564x/61/df/13/61df13452dab063e11d79abab00b083f.jpg',
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey[300]!,
+                              blurRadius: 10.0, // soften the shadow
+                              spreadRadius: 2.0, //extend the shadow
+                              offset: const Offset(
+                                0, // Move to right 10  horizontally
+                                4, // Move to bottom 10 Vertically
+                              ),
+                            )
+                          ],
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              teacherList[index].image,
+                            ),
+                            fit: BoxFit.fill,
+                          ),
                         ),
-                        fit: BoxFit.fill,
                       ),
+                      title: Row(
+                        children: [
+                          Text(
+                            teacherList[index].name,
+                            style: GoogleFonts.cinzel(
+                                color: Colors.black,
+                                letterSpacing: 0,
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(width: 5),
+                          Image.network(
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/1200px-Twitter_Verified_Badge.svg.png',
+                              height: 16)
+                        ],
+                      ),
+                      subtitle: Text('Rating : ${teacherList[index].rating}/5'),
+                      trailing: const Icon(Icons.phone_forwarded_outlined),
+                      isThreeLine: false,
                     ),
                   ),
-                  title: Row(
-                    children: [
-                      Text(
-                        'Nilufar Yesmin',
-                        style: GoogleFonts.cinzel(
-                            color: Colors.black,
-                            letterSpacing: 0,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(width: 5),
-                      Image.network(
-                          'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/1200px-Twitter_Verified_Badge.svg.png',
-                          height: 16)
-                    ],
-                  ),
-                  subtitle: const Text('Rating : 4.5/5'),
-                  trailing: const Icon(Icons.phone_forwarded_outlined),
-                  isThreeLine: false,
                 ),
               ),
             ),
           ),
           const SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.only(left: 15.0, right: 15, top: 15),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(5.0),
-                    bottomRight: Radius.circular(5.0),
-                    topLeft: Radius.circular(5.0),
-                    topRight: Radius.circular(5.0),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey[200]!,
-                      blurRadius: 10.0, // soften the shadow
-                      spreadRadius: 2.0, //extend the shadow
-                      offset: const Offset(
-                        0, // Move to right 10  horizontally
-                        4, // Move to bottom 10 Vertically
-                      ),
-                    )
-                  ]),
-              child: ListTile(
-                leading: Container(
-                  height: 50,
-                  width: 70,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(5.0),
-                      bottomRight: Radius.circular(5.0),
-                      topLeft: Radius.circular(5.0),
-                      topRight: Radius.circular(5.0),
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey[300]!,
-                        blurRadius: 10.0, // soften the shadow
-                        spreadRadius: 2.0, //extend the shadow
-                        offset: const Offset(
-                          0, // Move to right 10  horizontally
-                          4, // Move to bottom 10 Vertically
-                        ),
-                      )
-                    ],
-                    image: const DecorationImage(
-                      image: NetworkImage(
-                          'https://i.pinimg.com/564x/d1/fb/00/d1fb00cb580f5dce393b8a95535235eb.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                title: Row(
-                  children: [
-                    Text(
-                      'Subrina Sohana',
-                      style: GoogleFonts.cinzel(
-                          color: Colors.black,
-                          letterSpacing: 0,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(width: 5),
-                    Image.network(
-                        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/1200px-Twitter_Verified_Badge.svg.png',
-                        height: 16)
-                  ],
-                ),
-                subtitle: const Text('Rating : 4.3/5'),
-                trailing: const Icon(Icons.phone_forwarded_outlined),
-                isThreeLine: false,
-              ),
-            ),
-          ),
-          const SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.only(left: 15.0, right: 15, top: 15),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(5.0),
-                    bottomRight: Radius.circular(5.0),
-                    topLeft: Radius.circular(5.0),
-                    topRight: Radius.circular(5.0),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey[200]!,
-                      blurRadius: 10.0, // soften the shadow
-                      spreadRadius: 2.0, //extend the shadow
-                      offset: const Offset(
-                        0, // Move to right 10  horizontally
-                        4, // Move to bottom 10 Vertically
-                      ),
-                    )
-                  ]),
-              child: ListTile(
-                leading: Container(
-                  height: 50,
-                  width: 70,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(5.0),
-                      bottomRight: Radius.circular(5.0),
-                      topLeft: Radius.circular(5.0),
-                      topRight: Radius.circular(5.0),
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey[300]!,
-                        blurRadius: 10.0, // soften the shadow
-                        spreadRadius: 2.0, //extend the shadow
-                        offset: const Offset(
-                          0, // Move to right 10  horizontally
-                          4, // Move to bottom 10 Vertically
-                        ),
-                      )
-                    ],
-                    image: const DecorationImage(
-                      image: NetworkImage(
-                          'https://i.pinimg.com/564x/b3/28/19/b32819061f84d2d3cb44c93da54eff26.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                title: Row(
-                  children: [
-                    Text(
-                      'Mr Chang Mao',
-                      style: GoogleFonts.cinzel(
-                          color: Colors.black,
-                          letterSpacing: 0,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(width: 5),
-                    Image.network(
-                        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/1200px-Twitter_Verified_Badge.svg.png',
-                        height: 16)
-                  ],
-                ),
-                subtitle: const Text('Rating : 4.1/5'),
-                trailing: const Icon(Icons.phone_forwarded_outlined),
-                isThreeLine: false,
-              ),
-            ),
-          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

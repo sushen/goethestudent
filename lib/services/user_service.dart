@@ -1,15 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:goethestudent/models/student_booked.dart';
+import 'package:goethestudent/utils/show_snackbar.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class Authentication {
-  final FirebaseAuth auth;
-
-  Authentication(this.auth);
+class UserService {
+  User? user;
+  FirebaseAuth auth = FirebaseAuth.instance;
+  FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
   Future<User?> signInWithGoogle() async {
-    User? user;
-
     final GoogleSignIn googleSignIn = GoogleSignIn();
 
     final GoogleSignInAccount? googleSignInAccount =
@@ -75,4 +77,29 @@ class Authentication {
   //   }
   //   return user;
   // }
+
+  Future<void> bookedStudentClass(
+      StudentBookModel studentBookModel, BuildContext context) async {
+    final userCollection = firebaseFirestore.collection("bookedclass");
+    //final uid = auth.currentUser!.uid;
+
+    int timestamp = DateTime.now().millisecondsSinceEpoch;
+    final newUser = StudentBookModel(
+            teacherName: studentBookModel.teacherName,
+            rating: studentBookModel.rating,
+            classList: studentBookModel.classList,
+            userName: studentBookModel.userName,
+            email: studentBookModel.email,
+            uid: studentBookModel.uid,
+            amount: studentBookModel.amount,
+            bookedData: timestamp.toString(),
+            paymentMethod: "Nagad")
+        .toJson();
+
+    userCollection.doc("uids").set(newUser).whenComplete(() {
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+      Navigator.of(context).pop();
+      showSnackBar(context, "Successfully Booked");
+    });
+  }
 }

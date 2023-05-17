@@ -1,4 +1,6 @@
 import 'package:goethestudent/models/class_booking.dart';
+import 'package:goethestudent/models/teacher.dart';
+import 'package:goethestudent/models/teacher_schedule.dart';
 
 class LocalService {
   static List<ClassBooking> getClassList() {
@@ -113,6 +115,71 @@ class LocalService {
               experience: 3,
               profileImage:
                   'https://media.istockphoto.com/id/1128967675/photo/smiling-millennial-african-american-corporate-employee-executive-looking-at-camera.jpg?b=1&s=170667a&w=0&k=20&c=75HMNOLZKRu26iqJpgHUifqa16MgMRb_am0Gmv2Kmbk=')),
+    ];
+  }
+
+  static List<Teacher> getTeacher() {
+    return [
+      Teacher(
+          name: "Nilufar Yesmin",
+          image:
+              'https://i.pinimg.com/564x/61/df/13/61df13452dab063e11d79abab00b083f.jpg',
+          phone: '01855443321',
+          rating: 4.5,
+          teacherSchdule: [
+            TeacherSchedle(char: "A", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "B", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "C", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "D", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "E", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "F", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "G", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "H", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "I", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "J", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "K", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "L", isNotAvailable: false, isSelected: false),
+          ]),
+      Teacher(
+          teacherSchdule: [
+            TeacherSchedle(char: "A", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "B", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "C", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "D", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "E", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "F", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "G", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "H", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "I", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "J", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "K", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "L", isNotAvailable: false, isSelected: false),
+          ],
+          name: "Subrina Sohana",
+          image:
+              'https://i.pinimg.com/564x/d1/fb/00/d1fb00cb580f5dce393b8a95535235eb.jpg',
+          phone: '01755443321',
+          rating: 4.3),
+      Teacher(
+          teacherSchdule: [
+            TeacherSchedle(char: "A", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "B", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "C", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "D", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "E", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "F", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "G", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "H", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "I", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "J", isNotAvailable: true, isSelected: true),
+            TeacherSchedle(char: "K", isNotAvailable: false, isSelected: false),
+            TeacherSchedle(char: "L", isNotAvailable: false, isSelected: false),
+          ],
+          name: "Mr Chang Mao",
+          image:
+              'https://i.pinimg.com/564x/d1/fb/00/d1fb00cb580f5dce393b8a95535235eb.jpg',
+          phone: '01355443321',
+          rating: 4.1),
     ];
   }
 }
