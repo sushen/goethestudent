@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:goethestudent/services/auth_service.dart';
+import 'package:goethestudent/services/user_service.dart';
 import 'package:goethestudent/utils/colors.dart';
 import 'package:goethestudent/utils/custom_button.dart';
 import 'package:goethestudent/views/dashboard_page.dart';
@@ -36,8 +36,7 @@ class _LogInPageState extends State<LogInPage> {
                 color: AppColors.whiteColor,
                 textColor: AppColors.blackColor,
                 onPressed: () async {
-                  user = await Authentication(FirebaseAuth.instance)
-                      .signInWithGoogle();
+                  user = await UserService().signInWithGoogle();
                   if (user != null) {
                     Get.off(() => const DashBoardPage());
                   }

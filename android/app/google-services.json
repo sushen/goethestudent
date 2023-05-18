@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "148766305783",
-    "project_id": "goe-the-student-5bb94",
-    "storage_bucket": "goe-the-student-5bb94.appspot.com"
+    "project_number": "702898173106",
+    "project_id": "go-ethen-student",
+    "storage_bucket": "go-ethen-student.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:148766305783:android:3e458e7b509775bc48d2f2",
+        "mobilesdk_app_id": "1:702898173106:android:f1da2ca845324fa89f45ab",
         "android_client_info": {
           "package_name": "blog.biswas.video.goethestudent"
         }
       },
       "oauth_client": [
         {
-          "client_id": "148766305783-mpjancjbidsiram3l5t13vrpin5jh3ia.apps.googleusercontent.com",
+          "client_id": "702898173106-l3he48g1rptmq03qj0vp2j6a4st4kq9q.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "blog.biswas.video.goethestudent",
-            "certificate_hash": "6117c3e51fd66fb3cf0a2b1df769f7cf80691b04"
+            "certificate_hash": "11673524b32ccc38c47f8b674f6ab1f87b3a7224"
           }
         },
         {
-          "client_id": "148766305783-mt5gttr3r096sg4vnnn41hgjibrm9d5r.apps.googleusercontent.com",
+          "client_id": "702898173106-8l62ki8klo5simtchp54l8h8lo3d89ns.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBzX5_EITiBt-O42obBOph7Mn4798l08Cc"
+          "current_key": "AIzaSyAMy9ZVWvL-w5Zr24dQVcXbr350bjzQeX8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "148766305783-14rjoi3jo7m53ndbp0bu03ujl3hmub54.apps.googleusercontent.com",
+              "client_id": "702898173106-8l62ki8klo5simtchp54l8h8lo3d89ns.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
